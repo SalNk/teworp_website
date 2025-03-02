@@ -11,17 +11,18 @@
 
 <body>
   <div class="bg-gray-900">
-    <header class="absolute inset-x-0 top-0 z-50 hidden md:block">
+    <header class="absolute inset-x-0 top-0 z-50">
       <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+            <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=blue&shade=500"
               alt="">
           </a>
         </div>
-        <div class="flex lg:hidden">
-          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400">
+        <div class="flex lg:hidden" id="menu-container">
+          <button id="menu-button" type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400">
             <span class="sr-only">Open main menu</span>
             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
               aria-hidden="true" data-slot="icon">
@@ -42,16 +43,16 @@
       <!-- Mobile menu, show/hide based on menu open state. -->
       <div class="lg:hidden" role="dialog" aria-modal="true">
         <!-- Background backdrop, show/hide based on slide-over state. -->
-        <div class="fixed inset-0 z-50"></div>
-        <div
-          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
+        <div class="fixed inset-0 -z-40"></div>
+        <div id="mobile-menu"
+          class="block h-screen -mt-20 lg:fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10 transition duration-300 -translate-y-[600px] delay-150 ease-in-out">
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+              <img class="h-8 w-auto" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=blue&shade=500"
                 alt="">
             </a>
-            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-400">
+            <button id="close-button" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-400">
               <span class="sr-only">Close menu</span>
               <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                 aria-hidden="true" data-slot="icon">
@@ -112,7 +113,7 @@
             </p>
             <div class="mt-10 flex items-center justify-center gap-x-6">
               <a href="#"
-                class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">
+                class="rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400">
                 Découvrir
               </a>
               <a href="#" class="text-sm/6 font-semibold text-white">
@@ -175,8 +176,7 @@
                 </svg>
               </span>
               <div class="grow">
-                <span class="text-sm sm:text-base text-gray-500 dark:text-neutral-500">
-                  <span class="font-bold">Easy & fast</span> designing
+                <span class="text-sm sm:text-base text-gray-500 dark:text-neutral-500">Innover
                 </span>
               </div>
             </li>
@@ -192,7 +192,7 @@
               </span>
               <div class="grow">
                 <span class="text-sm sm:text-base text-gray-500 dark:text-neutral-500">
-                  Powerful <span class="font-bold">features</span>
+                  Impacter <span class="font-bold"></span>
                 </span>
               </div>
             </li>
@@ -208,7 +208,7 @@
               </span>
               <div class="grow">
                 <span class="text-sm sm:text-base text-gray-500 dark:text-neutral-500">
-                  User Experience Design
+                  Redonner le sourire
                 </span>
               </div>
             </li>
@@ -237,7 +237,7 @@
         <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none md:grid-cols-2 lg:grid-cols-3 lg:gap-y-16">
           <div class="relative pl-16">
             <dt class="text-base font-semibold text-gray-900">
-              <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
+              <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-blue-600">
                 <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
@@ -254,7 +254,7 @@
 
           <div class="relative pl-16">
             <dt class="text-base font-semibold text-gray-900">
-              <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
+              <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-blue-600">
                 <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75" />
                 </svg>
@@ -268,7 +268,7 @@
 
           <div class="relative pl-16">
             <dt class="text-base font-semibold text-gray-900">
-              <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
+              <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-blue-600">
                 <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m-6-6h12" />
                 </svg>
@@ -281,7 +281,7 @@
 
           <div class="relative pl-16">
             <dt class="text-base font-semibold text-gray-900">
-              <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
+              <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-blue-600">
                 <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75h15m-12 4.5h9m-6-9h3" />
                 </svg>
@@ -295,7 +295,7 @@
 
           <div class="relative pl-16">
             <dt class="text-base font-semibold text-gray-900">
-              <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
+              <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-blue-600">
                 <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M3 10.5l9-6 9 6v7.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18V10.5z" />
@@ -346,138 +346,150 @@
       <div class="mx-auto max-w-2xl px-4 lg:max-w-none">
         <div class="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
           <div>
-            <h2 class="text-4xl font-bold tracking-tight text-gray-900">We built our business on great customer service
-            </h2>
-            <p class="mt-4 text-gray-500">At the beginning at least, but then we realized we could make a lot more money
-              if we kinda stopped caring about that. Our new strategy is to write a bunch of things that look really
-              good
-              in the headlines, then clarify in the small print but hope people don't actually read it.</p>
+            <h2 class="text-4xl font-bold tracking-tight text-gray-900">Éducation Inclusive</h2>
+            <p class="mt-4 text-gray-500">Depuis 2015, nous avons initié plus de 6000 sourds aux outils numériques, en
+              créant
+              le premier dictionnaire informatique en langue des signes. Nos efforts ont été reconnus par l'Union
+              africaine et
+              le département d'État américain.</p>
+            <button
+              class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer transition delay-150 duration-300 ease-in-out hover:-translate hover:scale-110 hover:bg-blue-700">Voir
+              plus</button>
           </div>
-          <img src="https://tailwindui.com/plus-assets/img/ecommerce-images/incentives-07-hero.jpg" alt=""
+          <img src="/images/education.jpeg" alt="Éducation Inclusive"
             class="aspect-[3/2] w-full rounded-lg bg-gray-100 object-cover">
         </div>
+
         <div class="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
-          <img src="https://tailwindui.com/plus-assets/img/ecommerce-images/incentives-07-hero.jpg" alt=""
+          <img src="public/images/energie.jpg" alt="Énergie Renouvelable"
             class="aspect-[3/2] w-full rounded-lg bg-gray-100 object-cover">
           <div>
-            <h2 class="text-4xl font-bold tracking-tight text-gray-900">We built our business on great customer service
-            </h2>
-            <p class="mt-4 text-gray-500">At the beginning at least, but then we realized we could make a lot more money
-              if we kinda stopped caring about that. Our new strategy is to write a bunch of things that look really
-              good
-              in the headlines, then clarify in the small print but hope people don't actually read it.</p>
+            <h2 class="text-4xl font-bold tracking-tight text-gray-900">Énergie Renouvelable</h2>
+            <p class="mt-4 text-gray-500">Nous avons développé une technologie innovante permettant une cuisson rapide
+              en
+              utilisant des sources d’énergie renouvelables, contribuant ainsi à un avenir plus durable.</p>
+            <button
+              class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer transition delay-150 duration-300 ease-in-out hover:-translate hover:scale-110 hover:bg-blue-700">Voir
+              plus</button>
           </div>
         </div>
+
         <div class="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
           <div>
-            <h2 class="text-4xl font-bold tracking-tight text-gray-900">We built our business on great customer service
-            </h2>
-            <p class="mt-4 text-gray-500">At the beginning at least, but then we realized we could make a lot more money
-              if we kinda stopped caring about that. Our new strategy is to write a bunch of things that look really
-              good
-              in the headlines, then clarify in the small print but hope people don't actually read it.</p>
+            <h2 class="text-4xl font-bold tracking-tight text-gray-900">Formations et Consultance</h2>
+            <p class="mt-4 text-gray-500">Nous accompagnons les entreprises dans la formation de leurs cadres et
+              proposons des
+              services de consultance en informatique pour optimiser leur productivité.</p>
+            <button
+              class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer transition delay-150 duration-300 ease-in-out hover:-translate hover:scale-110 hover:bg-blue-700">Voir
+              plus</button>
           </div>
-          <img src="https://tailwindui.com/plus-assets/img/ecommerce-images/incentives-07-hero.jpg" alt=""
+          <img src="/images/formation.jpg" alt="Formations et Consultance"
             class="aspect-[3/2] w-full rounded-lg bg-gray-100 object-cover">
         </div>
+
         <div class="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
-          <img src="https://tailwindui.com/plus-assets/img/ecommerce-images/incentives-07-hero.jpg" alt=""
+          <img src="public/images/transport.jpg" alt="Transport"
             class="aspect-[3/2] w-full rounded-lg bg-gray-100 object-cover">
           <div>
-            <h2 class="text-4xl font-bold tracking-tight text-gray-900">We built our business on great customer service
-            </h2>
-            <p class="mt-4 text-gray-500">At the beginning at least, but then we realized we could make a lot more money
-              if we kinda stopped caring about that. Our new strategy is to write a bunch of things that look really
-              good
-              in the headlines, then clarify in the small print but hope people don't actually read it.</p>
+            <h2 class="text-4xl font-bold tracking-tight text-gray-900">Transport</h2>
+            <p class="mt-4 text-gray-500">Nous mettons à disposition des solutions de transport modernes et efficaces,
+              répondant aux besoins de mobilité des particuliers et des entreprises.</p>
+            <button
+              class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer transition delay-150 duration-300 ease-in-out hover:-translate hover:scale-110 hover:bg-blue-700">Voir
+              plus</button>
           </div>
         </div>
+
         <div class="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
           <div>
-            <h2 class="text-4xl font-bold tracking-tight text-gray-900">We built our business on great customer service
-            </h2>
-            <p class="mt-4 text-gray-500">At the beginning at least, but then we realized we could make a lot more money
-              if we kinda stopped caring about that. Our new strategy is to write a bunch of things that look really
-              good
-              in the headlines, then clarify in the small print but hope people don't actually read it.</p>
+            <h2 class="text-4xl font-bold tracking-tight text-gray-900">Immobilier</h2>
+            <p class="mt-4 text-gray-500">Nous développons des projets immobiliers innovants pour répondre aux besoins
+              croissants de logements modernes et accessibles.</p>
+            <button
+              class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer transition delay-150 duration-300 ease-in-out hover:-translate hover:scale-110 hover:bg-blue-700">Voir
+              plus</button>
           </div>
-          <img src="https://tailwindui.com/plus-assets/img/ecommerce-images/incentives-07-hero.jpg" alt=""
+          <img src="public/images/immobilier.jpg" alt="Immobilier"
             class="aspect-[3/2] w-full rounded-lg bg-gray-100 object-cover">
         </div>
       </div>
+
     </div>
   </div>
 
   <div class="bg-white py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <span
+        class="inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 mb-4">Notre
+        parcours</span>
       <div class="mx-auto max-w-2xl lg:mx-0">
-        <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">We approach work as a
-          place to make the world better</h2>
-        <p class="mt-6 text-base/7 text-gray-600">Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est euismod
-          lacus. Est non placerat nam arcu. Cras purus nibh cursus sit eu in id. Integer vel nibh.</p>
+        <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Nos succès de ces
+          dernières années</h2>
+        <p class="mt-6 text-base/7 text-gray-600">Depuis 2015, nous nous engageons dans l'inclusion numérique des
+          personnes en situation de handicap, en particulier les
+          sourds et aveugles. Grâce à notre programme, plus de 6000 sourds ont été initiés aux technologies numériques.
+        </p>
       </div>
 
       <div class="bg-white py-24 sm:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
             <div>
-              <time datetime="2021-08" class="flex items-center text-sm/6 font-semibold text-indigo-600">
+              <time datetime="2015" class="flex items-center text-sm/6 font-semibold text-blue-600">
                 <svg viewBox="0 0 4 4" class="mr-4 size-1 flex-none" aria-hidden="true">
                   <circle cx="2" cy="2" r="2" fill="currentColor" />
                 </svg>
-                Aug 2021
+                2015
                 <div
                   class="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"
                   aria-hidden="true"></div>
               </time>
-              <p class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">Founded company</p>
-              <p class="mt-1 text-base/7 text-gray-600">Nihil aut nam. Dignissimos a pariatur et quos omnis. Aspernatur
-                asperiores et dolorem dolorem optio voluptate repudiandae.</p>
+              <p class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">Lancement du programme</p>
+              <p class="mt-1 text-base/7 text-gray-600">Mise en place du projet de formation en informatique pour les
+                sourds et aveugles.</p>
             </div>
             <div>
-              <time datetime="2021-12" class="flex items-center text-sm/6 font-semibold text-indigo-600">
+              <time datetime="2019" class="flex items-center text-sm/6 font-semibold text-blue-600">
                 <svg viewBox="0 0 4 4" class="mr-4 size-1 flex-none" aria-hidden="true">
                   <circle cx="2" cy="2" r="2" fill="currentColor" />
                 </svg>
-                Dec 2021
+                2019
                 <div
                   class="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"
                   aria-hidden="true"></div>
               </time>
-              <p class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">Secured $65m in funding</p>
-              <p class="mt-1 text-base/7 text-gray-600">Provident quia ut esse. Vero vel eos repudiandae aspernatur.
-                Cumque
-                minima impedit sapiente a architecto nihil.</p>
+              <p class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">Reconnaissance africaine</p>
+              <p class="mt-1 text-base/7 text-gray-600">Présenté comme innovateur dans l’éducation lors de la foire de
+                l’innovation organisée par l’Union Africaine.</p>
             </div>
             <div>
-              <time datetime="2022-02" class="flex items-center text-sm/6 font-semibold text-indigo-600">
+              <time datetime="2022-02" class="flex items-center text-sm/6 font-semibold text-blue-600">
                 <svg viewBox="0 0 4 4" class="mr-4 size-1 flex-none" aria-hidden="true">
                   <circle cx="2" cy="2" r="2" fill="currentColor" />
                 </svg>
-                Feb 2022
+                2022
                 <div
                   class="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"
                   aria-hidden="true"></div>
               </time>
-              <p class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">Released beta</p>
-              <p class="mt-1 text-base/7 text-gray-600">Sunt perspiciatis incidunt. Non necessitatibus aliquid.
-                Consequatur ut
-                officiis earum eum quia facilis. Hic deleniti dolorem quia et.</p>
+              <p class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">Certification de Jeune Innovateur</p>
+              <p class="mt-1 text-base/7 text-gray-600">Reconnu officiellement comme jeune innovateur africain pour son
+                impact dans l'éducation.</p>
             </div>
             <div>
-              <time datetime="2022-12" class="flex items-center text-sm/6 font-semibold text-indigo-600">
+              <time datetime="2022-12" class="flex items-center text-sm/6 font-semibold text-blue-600">
                 <svg viewBox="0 0 4 4" class="mr-4 size-1 flex-none" aria-hidden="true">
                   <circle cx="2" cy="2" r="2" fill="currentColor" />
                 </svg>
-                Dec 2022
+                2022
                 <div
                   class="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"
                   aria-hidden="true"></div>
               </time>
-              <p class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">Global launch of product</p>
-              <p class="mt-1 text-base/7 text-gray-600">Ut ipsa sint distinctio quod itaque nam qui. Possimus aut unde
-                id
-                architecto voluptatem hic aut pariatur velit.</p>
+              <p class="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">Représentation internationale</p>
+              <p class="mt-1 text-base/7 text-gray-600">Sélectionné pour représenter la RDC au programme Young African
+                Leaders Initiative initié par Barack Obama..</p>
             </div>
           </div>
         </div>
@@ -487,7 +499,7 @@
   </div>
 
   <div class="relative bg-gray-900">
-    <div class="relative h-80 overflow-hidden bg-indigo-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
+    <div class="relative h-80 overflow-hidden bg-blue-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
       <img class="size-full object-cover"
         src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&blend=6366F1&sat=-100&blend-mode=multiply"
         alt="">
@@ -506,7 +518,7 @@
     </div>
     <div class="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
       <div class="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
-        <h2 class="text-base/7 font-semibold text-indigo-400">Award winning support</h2>
+        <h2 class="text-base/7 font-semibold text-blue-400">Award winning support</h2>
         <p class="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">We’re here to help</p>
         <p class="mt-6 text-base/7 text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
           tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet
@@ -582,7 +594,7 @@
             tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue.</p>
           <div class="mt-8 flex items-center gap-x-6">
             <a href="#"
-              class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create
+              class="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Create
               account</a>
             <a href="#" class="text-sm font-semibold text-gray-900">Contact us <span
                 aria-hidden="true">&rarr;</span></a>
@@ -620,7 +632,7 @@
         Contacts
       </h2>
     </div>
-  
+
     <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-6 md:gap-8 lg:gap-12">
       <div class="aspect-w-16 aspect-h-6 lg:aspect-h-14 overflow-hidden bg-gray-100 rounded-2xl">
         <img
@@ -629,13 +641,13 @@
           alt="Contacts Image">
       </div>
       <!-- End Col -->
-  
+
       <div class="space-y-8 lg:space-y-16">
         <div>
           <h3 class="mb-5 font-semibold text-black">
             Our address
           </h3>
-  
+
           <!-- Grid -->
           <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
             <div class="flex gap-4">
@@ -645,7 +657,7 @@
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-  
+
               <div class="grow">
                 <p class="text-sm text-gray-600">
                   United Kingdom
@@ -659,12 +671,12 @@
           </div>
           <!-- End Grid -->
         </div>
-  
+
         <div>
           <h3 class="mb-5 font-semibold text-black">
             Our contacts
           </h3>
-  
+
           <!-- Grid -->
           <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
             <div class="flex gap-4">
@@ -676,7 +688,7 @@
                 </path>
                 <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"></path>
               </svg>
-  
+
               <div class="grow">
                 <p class="text-sm text-gray-600">
                   Email us
@@ -689,7 +701,7 @@
                 </p>
               </div>
             </div>
-  
+
             <div class="flex gap-4">
               <svg class="shrink-0 size-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -697,7 +709,7 @@
                 <path
                   d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
-  
+
               <div class="grow">
                 <p class="text-sm text-gray-600">
                   Call us
@@ -846,5 +858,34 @@
 
 
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("menu-button");
+    const closeButton = document.getElementById("close-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuContainer = document.getElementById("menu-container");
+
+    // Ouvrir le menu
+    menuButton.addEventListener("click", function () {
+      menuContainer.classList.add("hidden");
+      mobileMenu.classList.remove("hidden");
+      mobileMenu.classList.remove("-translate-y-[600px]");
+    });
+
+    // Fermer le menu
+    closeButton.addEventListener("click", function () {
+      menuContainer.classList.remove("hidden");
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.add("-translate-y-[600px]");
+    });
+
+    // Fermer le menu en cliquant en dehors
+    document.addEventListener("click", function (event) {
+      if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+        mobileMenu.classList.add("hidden");
+      }
+    });
+  });
+</script>
 
 </html>
